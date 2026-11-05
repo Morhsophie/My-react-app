@@ -1,0 +1,145 @@
+.site-header {
+  position: sticky;
+  z-index: 20;
+  top: 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(15, 16, 25, 0.88);
+  backdrop-filter: blur(18px);
+}
+
+.header-inner {
+  position: relative;
+  display: flex;
+  min-height: 78px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.brand {
+  color: #f7f5f0;
+  font-size: 20px;
+  font-weight: 750;
+  letter-spacing: -0.055em;
+  white-space: nowrap;
+}
+
+.footer-brand {
+  color: #f7f5f0;
+  font-size: 23px;
+  font-weight: 750;
+  letter-spacing: -0.055em;
+}
+
+.brand-dot,
+.footer-brand span {
+  color: var(--lime);
+}
+
+.navigation {
+  display: flex;
+  align-items: center;
+  gap: clamp(20px, 3.5vw, 48px);
+  margin-left: 18px;
+}
+
+.navigation a,
+.header-contact {
+  color: #b6b6bf;
+  font-size: 13px;
+  font-weight: 550;
+  transition: color 180ms ease;
+}
+
+.navigation a:hover,
+.navigation a:focus-visible {
+  color: var(--lime);
+}
+
+.header-contact {
+  display: inline-flex;
+  min-height: 44px;
+  align-items: center;
+  gap: 18px;
+  padding: 0 17px;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 999px;
+  color: #f7f5f0;
+}
+
+.header-contact span {
+  color: var(--lime);
+}
+
+.header-contact:hover,
+.header-contact:focus-visible {
+  border-color: var(--lime);
+}
+
+.menu-toggle {
+  display: none;
+}
+
+@media (max-width: 700px) {
+  .header-inner {
+    min-height: 68px;
+  }
+
+  .brand {
+    font-size: 17px;
+  }
+
+  .menu-toggle {
+    display: flex;
+    width: 42px;
+    height: 42px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    padding: 0;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 50%;
+    background: transparent;
+    cursor: pointer;
+  }
+
+  .menu-toggle span {
+    width: 15px;
+    height: 1px;
+    background: #f7f5f0;
+  }
+
+  .navigation {
+    position: absolute;
+    top: calc(100% + 1px);
+    right: 0;
+    left: 0;
+    display: none;
+    align-items: stretch;
+    gap: 0;
+    margin: 0;
+    padding: 10px 24px 18px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    background: #0f1019;
+  }
+
+  .navigation-open {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .navigation a {
+    padding: 13px 0;
+  }
+
+  .header-contact {
+    display: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .navigation a,
+  .header-contact {
+    transition: none;
+  }
+}
